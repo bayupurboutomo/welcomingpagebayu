@@ -1,3 +1,14 @@
+:root {
+  /*========== Colors ==========*/
+  --hue-color: 240;
+
+  --first-color: hsl(var(--hue-color), 53%, 49%);
+  --text-color: hsl(var(--hue-color), 53%, 15%);
+  --white-color: #FFFFFF;
+  --body-color: hsl(var(--hue-color), 24%, 94%);
+
+}
+
 /* Import fonts */
 @font-face {
   font-family: HK Grotesk;
@@ -11,11 +22,36 @@
     format("opentype");
 }
 
+.page__theme {
+  position: absolute;
+  top: 1rem;
+  right: 4rem;
+  display: flex;
+  padding: .25rem;
+  border-radius: 50%;
+  box-shadow: inset -1px -1px 1px hsla(var(--hue-color), 0%, 100%, 1), 
+              inset 1px 1px 1px hsla(var(--hue-color), 30%, 86%, 1);
+  color: var(--first-color);
+  cursor: pointer;
+  transition: .4s; 
+}
+.dark-theme .page__theme {
+  box-shadow: inset -1px -1px 1px hsla(var(--hue-color), 8%, 20%, 1), 
+              inset 1px 1px 1px hsla(var(--hue-color), 8%, 12%, 1);
+}
+.dark-theme {
+  --body-color:hsl(var(--hue-color), 10%, 16%);
+  --text-color: hsl(var(--hue-color), 12%, 95%);
+}  
+
+
 body {
   font-family: HK Grotesk, sans-serif;
-  background-color: var(--color-bg);
-
+  background-color: var(--body-color);
+  color: var(--text-color)
 }
+
+
 
 a {
   font-size:0.9rem;
